@@ -1,5 +1,8 @@
-package com.example.myapp.repository
-import com.example.myapp.model.UserModel
+package myApp.repository
+
+
+import myApp.model.UserModel
+import javax.security.auth.callback.PasswordCallback
 
 interface UserRepo {
 

@@ -1,4 +1,4 @@
-package com.example.myapp.view
+package myApp.view
 
 import android.app.Activity
 import android.content.Context
@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.R
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
@@ -25,7 +24,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -52,10 +50,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.myapp.view.theme.Blue
-import com.example.myapp.view.theme.Purple80
-import com.example.myapp.view.theme.White
-import com.google.firebase.auth.FirebaseAuth
+import com.example.myapp.ui.theme.Blue
+import com.example.myapp.ui.theme.Purple80
+import com.example.myapp.ui.theme.White
+//import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -177,15 +175,15 @@ fun LoginBody() {
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(context, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 } else {
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
-                                // Navigate to main activity or dashboard
-                            } else {
-                                Toast.makeText(context, task.exception?.message ?: "Login failed", Toast.LENGTH_SHORT).show()
-                            }
-                        }
+//                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+//                        .addOnCompleteListener { task ->
+//                            if (task.isSuccessful) {
+//                                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+//                                // Navigate to main activity or dashboard
+//                            } else {
+//                                Toast.makeText(context, task.exception?.message ?: "Login failed", Toast.LENGTH_SHORT).show()
+//                            }
+//                        }
                 }
             },
                 modifier = Modifier
@@ -220,10 +218,6 @@ fun LoginBody() {
                     modifier = Modifier
                         .height(60.dp)
                         .weight(1f)
-                        .clickable {
-//                            googleSignInLauncher.launch(googleSignInClient.signInIntent)
-                        },
-                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
                 ) {
                     Row(
                         modifier = Modifier.fillMaxSize(),
@@ -232,14 +226,13 @@ fun LoginBody() {
                     ) {
                         Image(
                             painter = painterResource(com.example.myapp.R.drawable.gmail),
-                            contentDescription = "Google Sign In",
+                            contentDescription = null,
                             modifier = Modifier.size(30.dp)
                         )
                         Spacer(modifier = Modifier.width(15.dp))
                         Text("Google")
                     }
                 }
-
 
             }
             Spacer(modifier = Modifier.height(20.dp))

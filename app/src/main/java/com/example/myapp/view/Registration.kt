@@ -1,4 +1,4 @@
-package com.example.myapp.view
+package myApp.view
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -49,15 +49,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapp.R
-import com.example.myapp.view.theme.Blue
-import com.example.myapp.view.theme.Purple80
-import com.example.myapp.view.theme.White
-import com.example.myapp.model.UserModel
-import com.example.myapp.repository.UserRepo
-import com.example.myapp.repository.UserRepoImpl
-import com.google.firebase.auth.FirebaseAuth
-//import com.example.myapp.view.theme
-import com.example.myapp.viewmodel.UserViewModel
+
+import com.example.myapp.ui.theme.Blue
+import com.example.myapp.ui.theme.Purple80
+import com.example.myapp.ui.theme.White
+import myApp.model.UserModel
+import myApp.repository.UserRepoImpl
+//import com.google.firebase.auth.FirebaseAuth
+import myApp.view.ui.theme.Application_1Theme
+import myApp.viewmodel.UserViewModel
 import java.util.Calendar
 
 class Registration : ComponentActivity() {

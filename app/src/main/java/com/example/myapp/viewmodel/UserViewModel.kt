@@ -1,9 +1,11 @@
-package com.example.myapp.viewmodel
+package myApp.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.myapp.model.UserModel
-import com.example.myapp.repository.UserRepo
+
+import myApp.model.UserModel
+import myApp.repository.UserRepo
+
 
 
 class UserViewModel (val repo: UserRepo) : ViewModel(){
